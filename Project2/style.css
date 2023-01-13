@@ -1,3 +1,886 @@
-h1 {
-    color: red;
- }
+:root {
+    --main-blue: #0065FC;
+    --main-aqua:#DEEBFF;
+    --main-grey: #f2f2f2;
+    --main-grey2:#D9D9D9;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* border-box setup allowed calculating width like this: 
+width(div child)=100%=width(div parent)-padding
+width(div child)=50%=(width(div parent)-padding)*50%
+
+*/
+/*common CSS*************************************************************************/
+html{
+    font-size: 16px;
+}
+body{
+    display: flex;
+    flex-direction:column;  
+    width: 100%;
+    
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+#logo, nav{
+    height: 19px;  
+} 
+#logo{
+    margin-top: 44px;
+}
+.nav_link:hover, .nav_link:visited{
+    color: var(--main-blue);
+}
+
+.nav_link{
+    text-decoration:none;
+    color:  black;
+}
+main{
+    display: flex;
+    flex-direction:column; 
+
+}
+#locate{
+    display: flex;
+    flex-direction:column; 
+    width: 100%;
+    margin-bottom: 39px;
+}
+#locate p{
+    display: inline-block;
+    vertical-align:text-top;
+    text-align: left;
+}
+
+#search_box{
+    height: 49px;
+}
+#locate_btn{
+    border: 1px solid var(--main-grey);
+    background: var(--main-grey);
+    border-radius: 15px 0 0 15px;
+    cursor: pointer;
+    height: 100%;
+}
+#search_term{
+    border: 1px solid var(--main-grey);
+    border-right: none;
+    border-left: none;
+    height: 100%;
+}
+#search_btn{
+    border: 1px solid var(--main-blue);
+    border-left: none;
+    background: var(--main-blue);
+    border-radius: 0 15px 15px 0;
+    cursor: pointer;
+    height: 100%;
+        
+}
+#filter{
+    display: flex;
+    flex-direction: row;
+    margin-top: 31px;
+    width: 100%;
+    margin-bottom: 38px;
+    
+}
+#filter h2{
+    margin: auto 0;
+    padding-right: 20px;
+    
+}
+#filter_option{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.filter_check{
+    
+    height: 50px;
+    border:2px solid var(--main-grey2);
+    border-radius: 25px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+ .filter_check:hover{
+    background-color: var(--main-aqua);
+
+}
+#room_number{
+    display: flex;
+    flex-direction: row;
+    align-items:baseline;
+    height: 24px;
+    
+}
+#room_number span{
+    width: 24px;
+    height: 100%;
+    border: 1px solid var(--main-grey);
+    border-radius: 50%;
+    margin: 0 9px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#room_number p{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+#room_city, #popular{
+        
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-grey);
+}
+#room_city .title{
+    margin-top: 42px;
+    margin-bottom: 23px;
+}
+#room_6{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-flow: row wrap;
+    align-items: space-between;
+    justify-content: space-between;
+}
+.room_info{
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 5px var(--main-grey);
+    cursor: pointer; 
+}
+.photo_room{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    margin:5px auto; 
+    height: 60%;
+    width: 95%;
+}
+.room_detail{
+    height: 37%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom:11px;
+    margin-top: 4px; 
+}
+#more{
+    text-decoration: none;
+}
+#title_pop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#pop_3{
+    display: flex;
+    justify-content: space-between;
+}
+.pop_info{
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;  
+    height: 144px; 
+    box-shadow: 5px 5px 5px var(--main-grey);
+    cursor: pointer;
+}
+.photo_pop{
+    width:40%;
+    height: 134px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    margin:auto 5px; 
+}
+.pop_detail{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+#activities{
+    display: flex;
+    flex-direction: column;
+}
+#activity_4{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.amusement{
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px var(--main-grey);
+    cursor: pointer;
+} 
+.amusement h3{
+    padding-left: 19px;
+    height: 56px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.photo_atv{
+    width:100%;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--main-grey);
+}
+ul{
+    list-style: none;
+    margin-top:20px;
+    padding-left: 0;
+}
+li{
+    padding-bottom: 12px;
+}
+#locate_btn i{
+    color: black;
+}
+
+#search_sign i{
+    color:white;
+}
+.star{
+    height: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.fa-solid fa-star fa-xs{
+    margin-right: 4px;
+}
+img{
+    object-fit: cover;
+}
+/*font settings******************************************************************************/
+h1,h2,h3,p,input[type=text],#search_btn, .nav_link,.p_info,.filter_check, .title, #more,ul{
+    font-family: 'Raleway';
+    font-style: normal;
+    color: black; 
+}
+h1, .title{  
+    font-weight: 700;
+    font-size: 1.375rem;
+} 
+.title{
+    text-decoration: none;
+}
+.title :visited{
+    color: black;
+}
+h2, input[type=text], #search_btn, .filter_check, #more{ 
+    font-weight: 700;
+    font-size: 1.125rem;
+} 
+h3{
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.p_info, .nav_link,  ul{
+    font-weight: 400;
+    font-size: 1rem;
+} 
+.p_price, li{
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+i{
+    color: var(--main-blue);
+}
+
+/* 
+**********************************************************************************************************************for screens whose width are bigger than 1024(PC and so on)
+*/
+@media (min-width: 992px) and (max-width: 1400px){
+    body{
+        padding: 0 50px;
+        
+    }
+/******************************************************************header begin */
+  
+
+    .nav_link{
+        padding: 48px 27px 0 27px;
+        margin-left: 13px;
+        display: inline-block; 
+    }
+    .nav_link:hover{
+        border-top: 2px solid var(--main-blue);
+    }
+  
+/* header end */
+ 
+/*************************************************************locate begin */
+    #locate{
+        padding-top: 63px;
+        padding-left: 5px;
+ 
+    }
+    /* search start */
+    #locate p
+    {
+        margin-top:8px;
+         
+    }
+    #search_box{  
+        margin-top:20px;
+    }
+
+    #locate_btn{
+        width:4%;
+    }
+    #search_term{
+   
+        width:18%;
+    }
+
+    #search_btn{
+        width:13%;
+        color:white;
+    }
+    #search_sign{
+        display:none;
+    }
+  /* search end */
+  /* filter start */
+    .filter_check{
+        margin-right: 25px;
+        padding-right: 15px;
+    }
+    .filter_check i{
+        margin-right: 10px;
+        margin-left: 20px;
+    }
+
+/* loacte end */
+/******************************************************************rooms start */
+    #rooms{
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+    }
+    #room_city, #popular{
+
+        background-color: var(--main-grey);
+        border-radius: 20px;
+       
+    }
+    /* room_city start */
+    #room_city{
+        padding: 0 40px;
+        width:66%;
+        margin-right: 40px;
+        
+    }
+    .room_info{    
+        flex: 0 0 30%;
+        height: 199px;
+        margin-bottom: 30px;
+  
+    }
+    .room_detail{
+
+        position: relative;
+        margin-left: 16px;
+       
+    }
+    #more{
+
+        margin-top: 21px;
+        margin-bottom: 46px;
+    }
+    /* rooms_city end */
+    /* popular start */
+ 
+    #popular{
+        width:31%;
+        padding-left: 37px;
+        padding-right: 40px;
+   
+    }
+    #title_pop{
+        margin-top: 41px;
+        margin-bottom: 26px;
+    }
+
+    #pop_3{
+
+        flex-direction: column;
+        margin-bottom: 34px;
+
+    }
+   
+    .pop_info{
+        width: 100%; 
+        margin-bottom: 33px;
+       
+    }
+ 
+    .pop_detail{
+        padding: 6% 5% 0 5%; 
+        
+    }
+
+    .pop_detail .star{
+        
+        position: absolute;
+        bottom: 10px;
+    } 
+
+/* rooms end */
+/**********************************************************activities start */
+    #activities{
+        margin-top: 60px;  
+    }
+    #activities .title{
+        margin-bottom: 18.47px;
+    }
+
+     .amusement{
+        width: 22.6%;
+
+    } 
+
+    .photo_atv{
+        height: 389px;
+    }
+/********************************************************************footer start */
+    footer{
+        height: 225px;
+        margin-top: 61px;
+    }
+    #footer_info1, #footer_info2, #footer_info3{
+        
+        padding-left: 70px;
+        padding-top: 45px;
+
+    }
+    #footer_info1, #footer_info2{
+        width: 30%;
+    }
+    #footer_info3{
+        width:40%;
+   
+    }
+}
+/* 
+****************************************************************************************************************************for screens whose width are between 768 and 991 (pad)
+*/
+@media (min-width: 768px) and (max-width: 991px) and (orientation: portrait){
+
+    body{
+        padding: 0 72px;
+        
+    }
+/******************************************************************header begin */
+    
+    .nav_link{
+        padding: 48px 0 0 68px;
+        display: inline-block; 
+    }
+    .nav_link:hover{
+        border-top: 2px solid var(--main-blue);
+    }
+
+/* header end */
+
+/*************************************************************locate begin */
+    #locate{
+        padding-top: 58px;
+    }
+    #locate p
+    {
+    
+        margin-top:13px;  
+    }
+    #search_box{    
+        margin-top:20px;
+
+    }
+    #locate_btn{
+      
+        width:8%;
+        
+    }
+    #search_term{
+
+        width:35%;
+    }  
+    #search_btn{
+        width:20%;
+        color:white; 
+    }
+    #search_sign{
+        display:none;
+    }
+
+    #filter_option{
+
+        justify-content: space-between;
+        margin-right: 2%;
+    }
+
+    .filter_check{
+        padding-left: 2%;
+        padding-right: 2%;
+ 
+    }
+    .filter_check i{
+        margin-right: 10px;
+    }
+
+/* loacte end */
+/******************************************************************rooms start */
+    #rooms{
+        width:100%;
+        display: flex;
+        flex-direction: column;   
+    }
+
+    #room_city, #popular{
+        border-radius: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+       
+    }
+    .room_info{
+        flex: 0 0 30%;
+        height: 199px; 
+        margin-bottom: 30px;
+    }
+    .room_detail{
+        margin-left: 12px;
+    }
+    #more{
+        margin:28px auto 28px 0;
+       
+    }
+    /* rooms_city end */
+    /* popular start */
+    #popular{
+      
+        margin-top: 53px;
+    }
+    #title_pop{
+
+        margin-top: 34px;
+        margin-bottom: 38px;
+    }
+
+    #pop_3{
+
+        flex-direction: row;
+
+    }
+   
+    .pop_info{
+        width: 32%;
+        margin-bottom: 48px;  
+    }
+ 
+    .pop_detail{
+        padding: 12px 10px 0 10px;
+
+    }
+    .pop_detail .star{
+
+        position: absolute;
+        bottom: 10px;
+    } 
+
+/* rooms end */
+/**********************************************************activities start */
+    #activities{
+        margin-top: 70px;    
+    }
+    #activities .title{
+        margin-bottom: 34px;
+    }
+
+     .amusement{
+        width: 22.6%;
+    } 
+
+    .photo_atv{
+        height: 211px;
+ 
+    }
+/********************************************************************footer start */
+
+    footer{
+        height: 225px;
+        margin-top: 69px;
+    }
+    #footer_info1, #footer_info2, #footer_info3{
+        padding-left: 70px;
+        padding-top: 45px;
+    }
+    #footer_info1, #footer_info2{
+        width: 30%;
+
+    }
+    #footer_info3{
+        width:40%;
+    }
+    
+}
+/* 
+*************************************************************************************************************************for screens whose width are smaller than 768 (cell phone)
+*/
+@media (max-width: 767px) and (orientation: portrait){
+   
+/************************************************************************header begin */
+    header{
+        display: flex;
+        flex-direction: column;
+        margin-top: 21px;
+    }
+    #logo{
+        margin: auto;
+        display: block;
+    } 
+    nav{ 
+      
+        margin-top: 48px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .nav_link{
+        display:table-cell; 
+        text-align: center;
+        margin-bottom: 23px;
+        
+    }
+    .nav_link:hover{
+        border-bottom: 2px solid var(--main-blue);
+    }
+   
+
+/* header end */
+
+/****************************************************************locate begin */
+    #locate{
+        margin-top: 31px;
+        padding-left: 20px;
+        padding-right: 20px;
+        
+    }
+    #locate p{
+        margin-top: 13px;
+       
+    }
+    #search_box{
+        margin-top: 36px;
+    }
+
+    #locate_btn{
+ 
+        width:12%;
+   
+    }
+    #search_term{
+        width:60%;
+    }
+
+    #search_sign{
+      
+        border: 1px solid var(--main-blue);
+        border-left: none;
+        background: var(--main-blue);
+        border-radius: 0 15px 15px 0;
+        cursor: pointer;
+        width:12%;
+        height: 100%;
+     
+    }
+ 
+    #search_btn{
+        display:none;
+    }
+    #filter{
+        height: 153px;
+        margin-top: 34px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+    }
+    #filter h2{
+        margin-bottom: 15px;
+    }
+
+    #filter_option{
+        flex-flow: row wrap;
+        align-content: flex-start;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .filter_check{
+        flex: 0 0 48%;
+        margin-bottom: 17px;
+    }
+    .filter_check span{
+        font-size: 11px;
+        line-height: 13px;
+        
+     
+    }
+    .filter_check i{
+        margin-left: 13px;
+        margin-right: 5px;
+        
+    }
+   
+    #room_number p
+    {
+        width: 90%;
+    }
+/* loacte end */
+/* ************************************************************rooms start */
+#rooms{
+    margin-top: 37px;
+    width:100%;
+    display: flex;
+    flex-direction:column-reverse;
+    justify-content: space-between;
+}
+
+/**popular start */
+#popular{
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+#title_pop{
+    margin-top: 28px;
+    margin-bottom: 26px;
+}
+
+#pop_3{  
+    margin-bottom: 36px;
+    flex-direction: column;
+}
+
+.pop_info{
+
+    margin-bottom: 11px;  
+}
+
+.pop_detail{
+
+    padding-top: 16px;
+    padding-left: 15px;
+    
+}
+.pop_detail .star{
+    
+    position: absolute;
+    bottom: 10px;
+} 
+/* room_city start */
+#room_city{
+    width:100%;
+    padding: 0 20px;
+    background-color: white;
+}
+#room_city .title{
+    margin-top: 26px;
+    margin-bottom: 19px;
+}
+#room_6{ 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+.room_info{
+    
+    width:100%;
+    height: 199px;
+    margin-bottom: 12px;
+
+}
+.photo_room{
+    width: 97%;
+}
+
+.room_detail{
+    margin-left: 16px;  
+}
+#more{
+    display: none;
+}
+/* rooms_city end */
+/* rooms end */
+/********************************************************activities start */
+#activities{
+    margin-top: 93px;
+    padding: 0 20px;
+    width: 100%; 
+}
+#activities .title{
+    width: 60%;
+}
+#activity_4{
+    flex-direction: column; 
+}
+ .amusement{
+    margin-bottom: 24px;
+} 
+.photo_atv{
+    height: 134px;
+}
+/********************************************************footer start */
+footer{
+
+    flex-direction: column;
+    height: 501px;
+    margin-top: 56px;
+}
+#footer_info1, #footer_info2, #footer_info3{
+
+    margin-left: 30px;
+
+}
+#footer_info1{
+margin-top: 45px;
+  
+}
+#footer_info2{
+margin-top: 28px;
+}
+#footer_info3{
+margin-top: 39px;
+margin-bottom: 49px;
+}
+
+}
