@@ -128,7 +128,7 @@ main{
 #room_number span{
     width: 24px;
     height: 100%;
-    border: 1px solid var(--main-grey);
+    border: 1px solid var(--main-grey2);
     border-radius: 50%;
     margin: 0 9px 0 0;
     display: flex;
@@ -288,8 +288,11 @@ li{
 .fa-solid fa-star fa-xs{
     margin-right: 4px;
 }
-.fa-solid:last-child{
+.fa-solid:nth-child(5){
     color: var(--main-grey);
+}
+.fa-solid fa-info fa-2xs{
+    color:var(--main-blue);
 }
 img{
     object-fit: cover;
