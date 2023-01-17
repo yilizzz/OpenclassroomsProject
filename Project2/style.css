@@ -230,6 +230,7 @@ main{
     display: flex;
     flex-direction: column;
 }
+
 .pop_detail .star{
     position: absolute;
     bottom: 10px;
@@ -286,6 +287,9 @@ li{
 }
 .fa-solid fa-star fa-xs{
     margin-right: 4px;
+}
+.fa-solid:last-child{
+    color: var(--main-grey);
 }
 img{
     object-fit: cover;
@@ -444,7 +448,6 @@ i{
 
     #pop_3{
         flex-direction: column;
-        margin-bottom: 34px;
     }
    
     .pop_info{
@@ -569,7 +572,7 @@ i{
         font-size: 0.875rem;
     }
     #more{
-        margin:28px auto 28px 0;  
+        margin:10px auto 46px 0;  
     }
     /* rooms_city end */
     /* popular start */
