@@ -34,7 +34,7 @@ header{
 #logo{
     margin-top: 44px;
 }
-.nav_link:hover, .nav_link:visited{
+.nav_link:hover{
     color: var(--main-blue);
 }
 
@@ -341,7 +341,7 @@ i{
     body{
         padding: 0 50px;
         max-width: 1400px;
-        
+        margin:auto;
     }
 /******************************************************************header begin */
   
@@ -651,12 +651,13 @@ i{
         margin-top: 48px;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        margin-bottom: 31px;
     }
     .nav_link{
         display:table-cell; 
         text-align: center;
-        margin-bottom: 23px;
-        
+        padding-bottom: 23px;
+       
     }
     .nav_link:hover{
         border-bottom: 2px solid var(--main-blue);
