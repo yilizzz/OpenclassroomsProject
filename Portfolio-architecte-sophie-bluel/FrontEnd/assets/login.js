@@ -17,10 +17,10 @@ function ListenerLoginCheck() {
         });
         const message = await response.json();
         if (message.userId){
-            localStorage.setItem("token", message.token);
+            sessionStorage.setItem("token", message.token);
             window.location.replace("index.html")
         }else{
-            localStorage.setItem("token", "none");
+            sessionStorage.setItem("token", "none");
             window.alert("Erreur dans l'identifiant ou le mot de passe.");
         }
     });
