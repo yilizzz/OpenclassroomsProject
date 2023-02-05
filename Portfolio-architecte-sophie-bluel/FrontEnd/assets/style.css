@@ -52,19 +52,26 @@ body {
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	text-align:center;
 }
 header {
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
 }
 section {
-	margin: 50px 0
+	margin: 50px 0;
 }
 
 h1{
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
 	font-family: 'Syne';
 	font-size: 22px;
 	font-weight: 800;
@@ -75,7 +82,6 @@ h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
-;
 }
 
 h2{
@@ -103,24 +109,28 @@ li:hover {
 	align-items: center;
 }
 #introduction figure {
-	flex: 1
+	flex: 1;
+	text-align:left;
 }
 #introduction img {
 	display: block;
-	margin: auto;
 	width: 80%;
+	margin-bottom: 1em;
 }
 
 #introduction article {
-	flex: 1
+	flex: 1;
+	text-align:left;
 }
 #introduction h2 {
 	margin-bottom: 1em;
+	margin-top: 1em;
 }
 
 #introduction p {
 	margin-bottom: 0.5em;
 }
+
 #portfolio{
 	display: flex;
 	flex-direction: column;
@@ -209,11 +219,14 @@ input[type="submit"]{
 	text-align: center;
 	border-radius: 60px ;
 }
-
+footer{
+	width: 100%;
+}
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em auto;
+	
 }
 li{
 	cursor: pointer;
@@ -221,19 +234,21 @@ li{
 img{
     object-fit: cover;
 }
-#mode{
-	width: 100%;
+.mode{
+	width:100%;
+	margin: 0 auto;
 	height: 59px;
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	background-color: black;
 	font-family: Work Sans;
 	font-size: 16px;
 	font-weight: 400;
 	text-align: center; 
 	color:white;
-	padding-top: 22px;
 }
-#mode button{
+.mode button{
 	background-color: white;
 	color: black;
 	width: 216px;
@@ -245,8 +260,9 @@ img{
 	text-align: center;
 
 	margin-left: 20px;
+	cursor: pointer;
 }
-#mode i{
+.mode i{
 	color:white;
 }
 .btnModify{
@@ -277,7 +293,9 @@ img{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	align-items: center;
 	height: 100%;
+	width: 100%;
 }
 #login_body a{
 	text-decoration: none;
@@ -333,7 +351,7 @@ form{
 	margin-bottom: 20px;
 }
 /* CSS for modal */
-.modal, #addWork{
+.modal, .addWork{
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -344,10 +362,9 @@ form{
 	background-color: white;
 	border: 1px solid #ddd;
 	border-radius: 10px;
-	position: relative;
 	box-sizing: border-box;
-	position: absolute;
-	top:10%;
+	position: fixed;
+	top:100px;
   }
 
   .modal h2{
@@ -360,7 +377,7 @@ form{
   .modal{
 	z-index: 2;
   }
-  #addWork {
+  .addWork {
 	z-index: 3;
   }
   .hidden {
@@ -390,6 +407,7 @@ form{
 	flex-direction: row;
 	flex-flow: row wrap;
 	width: 100%;
+	margin-bottom: 20px;
   }
   #works div{
 	width: 78px;
@@ -429,6 +447,7 @@ form{
 	border-top:1px solid #CCC;
 	display: flex;
 	flex-direction: column;
+	/* margin-top: 20px; */
   }
  
   #btnAdd{
@@ -505,7 +524,6 @@ form{
    	text-decoration: none;
    	line-height: 36px;
     text-align: center;
-  	
 	background: #CBD6DC;
 	border-radius: 50px;
 	color:#306685;
@@ -553,5 +571,6 @@ form{
 	background: #A7A7A7;
 	border-radius: 60px;
 	border: none;
+	color:white;
 }
  
