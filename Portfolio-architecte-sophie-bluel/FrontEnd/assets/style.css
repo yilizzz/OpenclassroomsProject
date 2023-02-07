@@ -340,6 +340,7 @@ img{
 form{
 	display: flex;
 	flex-direction: column;
+	text-align: start;
 }
 #login{
 	color: #1D6154;
@@ -559,6 +560,9 @@ form{
 	border-top: 1px solid #B3B3B3;
 	height: 100px;
 	position: relative;
+ }
+ #valid_message{
+	color: red;
  }
 #send{
 	width: 237px;

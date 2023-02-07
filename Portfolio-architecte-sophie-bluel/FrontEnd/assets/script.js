@@ -1,17 +1,21 @@
 //////////////gardian, if it's logged in, show the modify fonction, otherwise hide the button
 
 if(sessionStorage.getItem('token') === "none"  || sessionStorage.getItem('token') === null ){
-	document.querySelector(".btnModify").style.display="none";
+	document.querySelector("#btnModal").style.display="none";
 	document.querySelector("#logout").style.display="none";
 	document.querySelector("#login").style.display="block";
     document.querySelector(".mode").classList.add("hidden");
     document.querySelector(".categories").style.display = "block";
+    document.querySelector("#change_statue").style.display = "none";
+    document.querySelector("#change_intro").style.display = "none";
 }else{
-    document.querySelector(".btnModify").style.display="block";
+    document.querySelector("#btnModal").style.display="block";
 	document.querySelector("#logout").style.display="block";
 	document.querySelector("#login").style.display="none";
     document.querySelector(".mode").classList.remove("hidden");
     document.querySelector(".categories").style.display = "none";
+    document.querySelector("#change_statue").style.display = "block";
+    document.querySelector("#change_intro").style.display = "block";
 
 }
 const linkLogin=document.querySelector("#login");
@@ -57,11 +61,11 @@ function generateGallery(works) {
 
 generateGallery(allWorks);
 ////////////////////////////////////////////////////////button publier les changements
-const btnUpdate = document.getElementById("btn_update");
-
-btnUpdate.addEventListener("click", function(event){
-    event.preventDefault();
-    window.location.replace("index.html")
+const btnUpdate = document.querySelector("#btn_update");
+btnUpdate.addEventListener("click", async function(e){
+    var reponse = await fetch('http://localhost:5678/api/works/');
+    allWorks = await reponse.json();
+    generateGallery(allWorks);
 });
 
 ////////////////////////////////////////////////////////////////gestion des filter bouttons 
@@ -77,14 +81,12 @@ function changeBtnCtgColors(self, others){
     })
 }
 const btnAll = document.querySelector(".allCategory");
-
 btnAll.addEventListener("click", function () {
     generateGallery(allWorks);
     changeBtnCtgColors(".allCategory", [".objCategory",".appCategory",".hrCategory"]);
 });
 
 const btnObject = document.querySelector(".objCategory");
-
 btnObject.addEventListener("click", function () {
     const worksObj = allWorks.filter(function (work) {
         return work.categoryId == 1;
@@ -92,7 +94,6 @@ btnObject.addEventListener("click", function () {
     generateGallery(worksObj);
     changeBtnCtgColors(".objCategory", [".allCategory",".appCategory",".hrCategory"]);
 });
-
 const btnAppartment = document.querySelector(".appCategory");
 
 btnAppartment.addEventListener("click", function () {
@@ -102,7 +103,6 @@ btnAppartment.addEventListener("click", function () {
     generateGallery(worksApp);
     changeBtnCtgColors(".appCategory", [".allCategory",".objCategory",".hrCategory"]);
 });
-
 const btnHR = document.querySelector(".hrCategory");
 
 btnHR.addEventListener("click", function () {
@@ -297,11 +297,12 @@ document.getElementById('form_work').addEventListener("submit", async function (
         document.querySelector("#show").classList.add("hidden");
         document.querySelector("#optionCtg").innerHTML = "";
 	    listCategories(ctg);
+        document.getElementById('valid_message').classList.remove("hidden");
         
         inputCount=0;
         document.getElementById('send').style.backgroundColor="#A7A7A7";
         document.getElementById('send').disabled = true;
-        
+   
     }else{
         alert("Le téléchargement de la photo a échoué: "+response.status);
     }
@@ -321,6 +322,7 @@ function getObjectURL(file) {
 }
  ////////////////////////////valid check for the new photo's data: url, title and category
  modalAdd.addEventListener("change", function(event){
+    
     if((event.target.id=="upload_input")&&(event.target.value!="")){
         //////////////////////////////////////show this photo in the input zone
         var newSrc=getObjectURL(document.getElementById('upload_input').files[0]);
@@ -343,6 +345,7 @@ function getObjectURL(file) {
     if(inputCount>2){
         document.getElementById('send').disabled = false;
         document.getElementById('send').style.backgroundColor="#1D6154";
+        document.getElementById('valid_message').classList.add("hidden");
     }
  
 })

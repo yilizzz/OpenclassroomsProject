@@ -16,7 +16,7 @@
 	<div class="mode hidden">
 		<i class="fa-regular fa-pen-to-square"></i>
 		<span>Mode édition</span>
-		<button type="button" id="btn_update">publier les changements</button>
+		<button id="btn_update">publier les changements</button>
 	</div>
 	<header>
 	
@@ -35,10 +35,10 @@
 		<section id="introduction">
 			<figure>
 				<img src="./assets/images/sophie-bluel.png" alt="">
-				<button class="btnModify"><i class=" fa-regular fa-pen-to-square"></i>modifier</button>
+				<button class="btnModify" id="change_statue"><i class=" fa-regular fa-pen-to-square"></i>modifier</button>
 			</figure>
 			<article>
-				<button class="btnModify"><i class=" fa-regular fa-pen-to-square"></i>modifier</button>
+				<button class="btnModify" id="change_intro"><i class=" fa-regular fa-pen-to-square"></i>modifier</button>
 				<h2>Designer d'espace</h2>
 				<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
 				<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
@@ -95,6 +95,7 @@
 					<select id="optionCtg" name="optionCtg" required>
 					</select>
 					<div id="line_valid">
+						<p id="valid_message">Veuillez ajouter un fichier, un nom, une catégorie.</p>
 						<input id="send" type="submit" value="Valider" />
 					</div>
 				</form>
