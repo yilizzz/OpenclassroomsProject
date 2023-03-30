@@ -1,0 +1,160 @@
+@import url("Home.css");
+.carousel{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.carousel-img{
+    height: 415px;
+    width: 100%;
+    border-radius: 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slide-button{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    position: absolute;
+    width: 95%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.index{
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    color: white;
+}
+.room-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 30px;
+}
+.location h1{
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.location{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.tags{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.tag{
+    height: 25px;
+    border-radius: 10px;
+    background-color: #FF6060;
+    margin-right:10px;
+    padding-left:20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center; 
+}
+.tag span{
+    color: white;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.room-detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 26px;
+}
+.room-detail > div {
+    width: 48%;
+  }
+
+  .host{
+    display: flex;
+    justify-content: end;
+    align-items: start;
+  }
+  .host img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+  .names{
+    margin-right: 10px;
+    height: 52px;
+  }
+  .names li{
+    list-style-type: none;
+  }
+
+  @media (max-width: 767px) and (orientation: portrait){
+
+    .room-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+    .location h1{
+        font-size: 18px;
+        white-space:break-spaces;
+        width: 100%;
+    }
+   
+    .carousel-img{
+        height: 255px;
+        border-radius: 10px;
+    }
+    .index{
+        left: 45%;
+        top:60%;
+    }
+    .room-detail{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        
+    }
+    .tags{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .tag span{
+        font-size: 10px;
+    }
+    .tag{
+        height: 18px;
+        padding: auto 5px auto 5px;
+        margin-bottom: 5px;
+    }
+    .room-detail > div {
+        width: 100%;
+      }
+    .rating{
+        font-size: 10px;
+    }
+    .host-rating{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+  }
+  

@@ -1,0 +1,38 @@
+@import url("Home.css");
+
+.kasa-info, .closed{
+    margin: 0 100px 30px 100px;
+}
+
+.toggle-button{
+    background-color: #FF6060;
+    color:white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+	font-weight: 500;
+}
+.category-info{
+    background-color: #F6F6F6;
+    line-height: 34px;
+    margin-bottom: 30px;
+    padding: 36px 18px;
+    border-radius: 5px;
+    font-size: 24px;
+	font-weight: 400;
+    color: #FF6060;
+}
+@media (max-width: 767px) and (orientation: portrait){
+    .kasa-info, .closed{
+        margin: 0 0 20px 0;
+        
+    }
+    .toggle-button{
+        font-size: 13px;
+    }
+    .category-info{
+        font-size: 12px;
+        line-height: 17px;
+    }
+}

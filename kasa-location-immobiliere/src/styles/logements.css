@@ -1,0 +1,50 @@
+@import url("Home.css");
+
+.kasa-rooms{
+    margin-top: 43px;
+    background: #F7F7F7;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}    
+
+.kasa-room {
+    height: 340px;
+    width: 25vw;
+    border-radius: 10px;
+    margin-top: 56px;
+    margin-bottom: 50px;
+    background-position:center center;
+    background-size: cover;
+    position: relative;
+}
+
+.kasa-room span {
+    font-size: 18px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin-right: 20px;
+    color: white;
+  }
+
+  @media (max-width: 767px) and (orientation: portrait){
+
+    .kasa-rooms{
+        display: flex;
+        flex-direction: column;
+        justify-content:start;
+        align-items: center;
+        margin-top: 20px;
+        flex-wrap: no-wrap;
+        background: white;
+    }
+    .kasa-room {
+        margin: 0 0 20px 0;
+        width: 90vw; 
+    }
+  }

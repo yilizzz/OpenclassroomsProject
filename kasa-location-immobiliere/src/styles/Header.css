@@ -1,0 +1,49 @@
+@import url("Home.css");
+
+.kasa-header{
+	width: 100%;
+	display: flex;
+	justify-content:space-between;
+	flex-direction: row;
+	align-items:center;
+	margin-bottom: 28px;
+	margin-top: 40px;
+}
+.kasa-header h1{
+	font-size: 62px;
+	font-weight: bold;
+	letter-spacing: 5px;
+}
+.kasa-header img{
+	width: 30px;
+	height: 30px;
+	margin-right: 5px;
+}
+.kasa-nav {
+	display: flex;
+}
+.nav-link{
+	font-size: 24px;
+	font-weight: 500;
+	margin-left: 50px;
+	color: #FF6060;
+	text-decoration: none;
+}
+.nav-link:hover{
+	text-decoration: underline;
+}
+
+@media (max-width: 767px) and (orientation: portrait){
+	.kasa-header{
+		margin-top: 20px;		
+	}
+	.kasa-header h1{
+		font-size: 48px;
+	}
+	.nav-link{
+		font-size: 12px;
+		margin-left: 10px;
+	}
+}
+
+
