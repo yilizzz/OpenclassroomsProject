@@ -8,7 +8,7 @@ function Logements() {
         <div className="kasa-rooms">
             {roomData.map((item) => {
                 const coverImage = item.cover
-
+                // Show photos of each room with links to specific pages
                 return (
                     <Link to={`/details/${item.id}`} key={item.id}>
                         <div
