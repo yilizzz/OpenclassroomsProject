@@ -7,25 +7,25 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 
 function DetailsPage() {
-    const { id } = useParams()
+    const { id }  = useParams()
     const navigate = useNavigate()
     const dataLoge = [...logements]
-    const index = dataLoge.findIndex((obj) => obj.id === id)
+    const thisLoge = dataLoge.find((obj) => obj.id === id)
     //If the object with this id is not found, jump to the error page
     useEffect(() => {
-        if (index < 0) {
+        if (thisLoge === undefined) {
             navigate('/non-existent-path')
         }
-    }, [index, navigate])
+    }, [thisLoge, navigate])
 
-    if (index < 0) {
+    if (thisLoge === undefined) {
         return null
     }
 
     return (
         <div>
             <Header></Header>
-            <Carousel index={index} data={dataLoge}></Carousel>
+            <Carousel data={thisLoge}></Carousel>
             <Footer></Footer>
         </div>
     )

@@ -43,37 +43,38 @@ const Rating = ({ value, size }) => {
     return <div>{stars}</div>
 }
 
-const Carousel = ({ index, data }) => {
-    const dataLoge = [...data]
-    const numLoge = dataLoge.length
-    const [currentIndex, setCurrentIndex] = useState(index)
+const Carousel = ({ data }) => {
+    //const dataLoge = [...data];
+    // const numLoge = dataLoge.length;
+    const numImg = data.pictures.length;
+    const [currentIndex, setCurrentIndex] = useState(0)
     //Use a space to separate first and last name
-    const nameStr = dataLoge[currentIndex].host['name']
+    const nameStr = data.host['name']
     const names = nameStr.split(' ')
     //Add 1 to index, if it is the last one, return the first one
     const nextSlide = () => {
         const newIndex = currentIndex + 1
-        setCurrentIndex(newIndex >= dataLoge.length ? 0 : newIndex)
+        setCurrentIndex(newIndex >= numImg ? 0 : newIndex)
     }
     //Decrease index by 1, if it is the first one, return the last one
     const previousSlide = () => {
         const newIndex = currentIndex - 1
-        setCurrentIndex(newIndex < 0 ? dataLoge.length - 1 : newIndex)
+        setCurrentIndex(newIndex < 0 ? numImg - 1 : newIndex)
     }
 
     return (
-        <div className="carousel" key={`page${dataLoge[currentIndex].id}`}>
-            {/* Display room' photo */}
+        <div className="carousel" key={`page${data.id}`}>
+            {/* Display room's photos */}
             <div
                 className="carousel-img"
                 style={{
-                    backgroundImage: `url(${dataLoge[currentIndex].cover})`,
+                    backgroundImage: `url(${data.pictures[currentIndex]})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}
             >
                 {/* if there are more than 1 room in the list, show previous and next button, if there is not, does not show them */}
-                {numLoge > 1 ? (
+                {numImg > 1 ? (
                     <div className="slide-button">
                         <FontAwesomeIcon
                             icon={faChevronLeft}
@@ -100,18 +101,19 @@ const Carousel = ({ index, data }) => {
                 ) : (
                     <p></p>
                 )}
+                <div className="index">
+                    {currentIndex + 1}/{numImg}
+                </div>
             </div>
             {/* Display currentIndex */}
-            <div className="index">
-                {currentIndex + 1}/{numLoge}
-            </div>
+            
             <div className="room-info">
                 {/* Display loaction and tags*/}
                 <div className="location">
-                    <h1>{dataLoge[currentIndex].title}</h1>
-                    <p>{dataLoge[currentIndex].location}</p>
+                    <h1>{data.title}</h1>
+                    <p>{data.location}</p>
                     <div className="tags">
-                        {dataLoge[currentIndex].tags.map((item) => {
+                        {data.tags.map((item) => {
                             return (
                                 <div className="tag" key={item}>
                                     <span>{item}</span>
@@ -128,14 +130,14 @@ const Carousel = ({ index, data }) => {
                             <li>{names[1]}</li>
                         </ul>
                         <img
-                            src={dataLoge[currentIndex].host['picture']}
-                            alt={dataLoge[currentIndex].host['name']}
+                            src={data.host['picture']}
+                            alt={data.host['name']}
                         ></img>
                     </div>
                     <div className="rating">
                         {/* According to the rating data, display the corresponding stars*/}
                         <Rating
-                            value={dataLoge[currentIndex].rating}
+                            value={data.rating}
                             size="2x"
                         />
                     </div>
@@ -144,11 +146,11 @@ const Carousel = ({ index, data }) => {
             {/* Show collapsible content*/}
             <div className="room-detail">
                 <RoomDetail
-                    room={dataLoge[currentIndex]}
+                    room={data}
                     detail="description"
                 ></RoomDetail>
                 <RoomDetail
-                    room={dataLoge[currentIndex]}
+                    room={data}
                     detail="equipments"
                 ></RoomDetail>
             </div>
@@ -175,7 +177,7 @@ Carousel.defaultProps = {
             title: 'défaut',
             cover: 'défaut',
             pictures: 'défaut',
-            description: 'défaut',
+            description: ['défaut'],
             host: {
                 name: 'défaut défaut',
                 picture: 'défaut',
@@ -183,7 +185,7 @@ Carousel.defaultProps = {
             rating: 'défaut',
             location: 'défaut',
             equipments: 'défaut',
-            tags: 'défaut',
+            tags: ['défaut'],
         },
     ],
 }

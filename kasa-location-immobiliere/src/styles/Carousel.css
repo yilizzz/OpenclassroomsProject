@@ -28,9 +28,11 @@
 }
 .index{
     position: absolute;
-    left: 50%;
-    top: 90%;
+    left: 48%;
+    bottom: 20px;
     color: white;
+    font-size: 20px;
+
 }
 .room-info{
     display: flex;
@@ -54,17 +56,19 @@
 .tags{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: start;
+    flex-wrap: wrap;
 }
 .tag{
     height: 25px;
+    width: 145px;
     border-radius: 10px;
     background-color: #FF6060;
-    margin-right:10px;
-    padding-left:20px;
-    padding-right: 20px;
+    margin:0 10px 10px 0;
     display: flex;
+    justify-content: center;
     align-items: center; 
+    
 }
 .tag span{
     color: white;
@@ -83,25 +87,63 @@
 .room-detail > div {
     width: 48%;
   }
-
+.host-rating{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
   .host{
     display: flex;
     justify-content: end;
-    align-items: start;
+    align-items: center;
   }
   .host img{
     width: 64px;
     height: 64px;
     border-radius: 50%;
   }
+  .rating{
+    text-align: end;
+  }
   .names{
     margin-right: 10px;
     height: 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .names li{
     list-style-type: none;
+    color: #FF6060;
   }
-
+  @media (min-width: 768px) and (max-width: 991px) and (orientation: portrait){
+    .carousel-img{
+        height: 255px;
+        border-radius: 10px;
+    }
+    .room-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+    .location h1{
+        font-size: 28px;
+    }
+    .tag{
+        height: 25px;
+        width: 20vw;
+    }
+    .host-rating{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+   
+  }
   @media (max-width: 767px) and (orientation: portrait){
 
     .room-info{
@@ -120,9 +162,9 @@
         height: 255px;
         border-radius: 10px;
     }
-    .index{
-        left: 45%;
-        top:60%;
+ 
+    .names{
+        font-size: 18px;
     }
     .room-detail{
         display: flex;
@@ -130,22 +172,22 @@
         justify-content: start;
         
     }
+    .room-detail > div {
+        width: 100%;
+    }
     .tags{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
+        margin-bottom: 18px;
     }
     .tag span{
         font-size: 10px;
+        font-weight: 400;
     }
     .tag{
         height: 18px;
-        padding: auto 5px auto 5px;
-        margin-bottom: 5px;
+        width: 105px;
+        margin-right:4px;
     }
-    .room-detail > div {
-        width: 100%;
-      }
+   
     .rating{
         font-size: 10px;
     }
@@ -157,4 +199,16 @@
         width: 100%;
     }
   }
-  
+  @media (max-width: 360px) and (orientation: portrait){
+    .host{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+      }
+    .host-rating{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
+  }

@@ -13,6 +13,7 @@
 .kasa-404 span{
     font-size: 36px;
     font-weight: 500;
+    text-align: center;
 }
 .p404{
     font-size: 288px;
@@ -25,13 +26,17 @@
     font-weight: 500;
     color:  #FF6060;
 }
+@media (min-width: 768px) and (max-width: 991px) and (orientation: portrait){
+    .kasa-404 span{
+        font-size: 24px;
+    }
+}
 @media (max-width: 767px) and (orientation: portrait){
     .p404{
         font-size: 96px;
     }
     .kasa-404 span{
         font-size: 18px;
-        text-align: center;
     }
     .link-404{
         margin-top: 133px;

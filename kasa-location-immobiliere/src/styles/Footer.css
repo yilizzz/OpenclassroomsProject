@@ -14,6 +14,11 @@
     margin-top: 40px;
     margin-bottom: 20px;
 }
+.kasa-footer img{
+    width: 26px;
+    height: 30px; 
+    filter: brightness(100) contrast(0)
+}
 .kasa-footer p{
     color:white;
     margin: 0;

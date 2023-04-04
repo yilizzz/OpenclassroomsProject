@@ -26,14 +26,28 @@
     font-weight: 500;
     color: white;
 }
-
+@media (min-width: 768px) and (max-width: 991px) and (orientation: portrait){
+    .kasa-banner p {
+        font-size: 30px;
+        top: 35%;
+    }
+}
 @media (max-width: 767px) and (orientation: portrait){
     .kasa-banner {
         height: 111px;
     }
     .kasa-banner p {
+        font-size: 22px;
+        width: 65%;
         white-space:break-spaces;
-        font-size: 24px;
+    }
+}
+@media (max-width: 300px) and (orientation: portrait){
+    .kasa-banner {
+        height: 85px;
+    }
+    .kasa-banner p {  
+        font-size: 18px;
         width: 65%;
     }
 }

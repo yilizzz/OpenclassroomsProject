@@ -41,6 +41,19 @@
 		font-size: 48px;
 	}
 	.nav-link{
+		font-size: 15px;
+		margin-left: 10px;
+	}
+}
+
+@media (max-width: 360px) and (orientation: portrait){
+	.kasa-header{
+		margin-top: 15px;		
+	}
+	.kasa-header h1{
+		font-size: 36px;
+	}
+	.nav-link{
 		font-size: 12px;
 		margin-left: 10px;
 	}

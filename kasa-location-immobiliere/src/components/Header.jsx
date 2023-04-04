@@ -2,7 +2,7 @@ import '../styles/Header.css'
 import icon from "../assets/Vector.png"
 import { Link } from 'react-router-dom'
 
-function Header({ children }) {
+function Header() {
     return (
         <div className="kasa-header">
             <h1>
